@@ -6,7 +6,6 @@ public class Book {
     String title;
     String author;
     String image;
-	
     public int getId() {
         return id;
     }
