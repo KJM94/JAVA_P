@@ -10,7 +10,6 @@
 </head>
 <body>
     <div class="container">
-        
         <div class="jumbotron">
             <h1>Books INDEX</h1>
             <p>views/books/index.jsp</p>
