@@ -10,7 +10,6 @@
     <link href="<c:url value="/css/bootstrap.min.css" />" rel="stylesheet">
     <title>Hello, world!</title>
     <!-- JS -->
-    
   </head>
   <body class="container">
     <div class="jumbotron">
