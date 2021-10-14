@@ -13,6 +13,7 @@
             <tiles:insertAttribute name="header" />
             <tiles:insertAttribute name="content" />
             <tiles:insertAttribute name="footer" />
+        
 </body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
