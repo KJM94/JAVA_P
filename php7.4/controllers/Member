@@ -1,0 +1,44 @@
+<?
+	class Member extends CI_Controller{	//	Member 클래스 선언
+
+		function __construct()	//	클래스 생성할 때 초기 설정
+		{
+			parent::__construct();
+			$this->load->database();	//	데이터베이스 연결
+			$this->load->model("member_m");	//	모델 Member_m 연결
+			$this->load->helper(array("url", "date"));
+		}
+
+		public function index()	//	제일 먼저 실행되는 함수
+		{
+			$this->lists();	//	list 함수 호출
+		}
+
+		public function lists()
+		{
+			$data["list"] = $this->member_m->getlist();	//	목록읽기
+
+			$this->load->view("member_header");	//	상단출력(메뉴)
+			$this->load->view("member_list", $data);	//	member_list에 자료전달
+			$this->load->view("member_footer");	//	하단 출력
+		}
+
+		public function view()
+		{
+			$no=$this->uri->segment(4);
+			$data["row"]=$this->member_m->getrow($no);
+
+			$this->load->view("member_header");
+			$this->load->view("member_view", $data);
+			$this->load->view("member_footer");
+		}
+
+		public function del()
+		{
+			$no=$this->uri->segment(4);
+			$this->member_m->deleterow($no);
+
+			redirect("/member/lists/");
+		}
+	}
+?>
